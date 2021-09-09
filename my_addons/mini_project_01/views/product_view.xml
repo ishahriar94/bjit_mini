@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id='lockheed_custom_list' model='ir.ui.view' >
+            <field name='name'>product.list.view</field>
+            <field name='model'>product.list</field>
+            <field name='arch' type='xml'>
+                <tree>
+                    <field name='pname'/>
+                    <field name='cost'/>
+                    <field name='sale_price'/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id='product_view_form' model='ir.ui.view' >
+            <field name='name'>product.entry.form</field>
+            <field name='model'>product.list</field>
+            <field name='arch' type='xml'>
+                <form>
+                    <sheet>
+                    <group col="2">
+                    <group>
+                        <field name='pname'/>
+                        <field name='cus_sold'/>
+                        <field name='cus_purchase'/>
+                    </group>
+                    <group>
+                        
+                        <field name='cost'/>
+                        <field name='sale_price'/> 
+                        <field name='status'/> 
+
+                    </group>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+    </data>
+</odoo>
+
+
