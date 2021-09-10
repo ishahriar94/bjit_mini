@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- not now -->
+        <record id="view_products_form_warehouse" model="ir.ui.view">
+            <field name="name">product.list.form.warehouse.list</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form" />
+            <field name="arch" type="xml">  
+             <!-- <notebook position="inside">
+                    <page string="Property Listing">
+                        <group>
+                            <field name="pp_ids"/>
+                            
+
+                        </group>
+
+                    </page>
+
+                </notebook> -->
+
+                <xpath expr="//notebook/page[1]" position="before">  
+                      <page string="Property Listing">
+                            <group>
+                                <field name="pp_ids"/>
+                                
+
+                            </group>
+
+                        </page> 
+                </xpath>
+
+            </field>
+
+        </record>
+
+
+
+
+
+
+</odoo>

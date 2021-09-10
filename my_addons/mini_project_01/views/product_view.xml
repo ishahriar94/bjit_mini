@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
+  <data>
 
-
+<!-- for product list view-->
         <record id='lockheed_custom_list' model='ir.ui.view' >
             <field name='name'>product.list.view</field>
             <field name='model'>product.list</field>
@@ -11,11 +11,12 @@
                     <field name='pname'/>
                     <field name='cost'/>
                     <field name='sale_price'/>
+                    <field name='product_image' widget = "image"/> 
                 </tree>
             </field>
         </record>
 
-
+<!-- for product form view -->
         <record id='product_view_form' model='ir.ui.view' >
             <field name='name'>product.entry.form</field>
             <field name='model'>product.list</field>
@@ -27,19 +28,106 @@
                         <field name='pname'/>
                         <field name='cus_sold'/>
                         <field name='cus_purchase'/>
+                        <field name='avaiable_from'/>
+                        <field name='available_till'/>
+
                     </group>
                     <group>
-                        
+                        <field name='description'/>
                         <field name='cost'/>
                         <field name='sale_price'/> 
                         <field name='status'/> 
-
+                        <field name='product_image' widget = "image"/> 
                     </group>
                     </group>
                     </sheet>
                 </form>
             </field>
         </record>
+
+
+<!-- kanban view for products -->
+    
+   <!-- calendar view for products -->
+
+   <!-- < Calendar >  -->
+
+    <record id="product_view_calendar" model="ir.ui.view">   
+        <field name="name">inventory.product.calendar</field>   
+        <field name="model">product.list</field>   
+        <field name="arch" type="xml">       
+            <calendar string="Product Availablity TimeSheet" date_start="avaiable_from"                 
+                date_stop="available_till">               
+                        
+                
+                <field name="pname"/>           
+            
+            </calendar>   
+        </field>
+    </record>
+
+
+<!-- Kanban advanced view -->
+    <record id="view_product_kanban" model="ir.ui.view">
+        <field name="name">product.list.kanban</field>
+        <field name="model">product.list</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="status" colors="blue: status=='new'">
+                <field name="pname"/>
+                <field name="description"/>
+                <field name="product_image"/>
+                
+                <field name="cost"/>
+                <field name="status"/>
+                <progressbar field="status" colors='{"new": "info", "offer_received": "warning", "offer_accepted": "success", "cancel": "danger"}'/>
+                
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click oe_kanban_card o_real_estate_kanban" style="background-color: #f3e5f5; margin-top: 10px;">
+
+                            <div class="o_kanban_image">
+                                <field name="product_image" widget="image" class="oe_avtar"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <h2 class="o_kanban_record_title"><field name="pname"/></h2>
+                                <ul>
+                                    
+                                    
+                                    <li>Description : <field name="description"/></li>
+                                    <li>Price : <field name="cost"/></li>
+                                    <li>Status : <field name="status"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
     </data>
 </odoo>
