@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+        <record id="view_base_lockhd" model="ir.ui.view">
+            <field name="name">employee.lockheed.new</field>
+            <field name="model">hr.employee.public</field>
+             <field name="arch" type="xml">  
+                <tree>
+                    <field name="name"/>
+                    <field name="job_title"/>
+                    
+                    <field name="work_email"/>
+                </tree>
+            </field>
+            </record>
+
+</odoo>

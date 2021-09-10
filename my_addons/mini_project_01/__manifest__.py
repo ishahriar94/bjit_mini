@@ -16,7 +16,7 @@
     'version': 'alpha',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','hr'],
 
     # always loaded
     'data': [
@@ -24,6 +24,8 @@
         'views/menu.xml',
         'views/product_view.xml',
         'views/warehouse_view.xml',
+        'views/lock_emp_view.xml',
+
 
         
     ],
