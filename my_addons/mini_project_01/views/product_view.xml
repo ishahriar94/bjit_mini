@@ -7,11 +7,16 @@
             <field name='name'>product.list.view</field>
             <field name='model'>product.list</field>
             <field name='arch' type='xml'>
-                <tree>
+                <tree
+                decoration-danger="status == 'unavailable'" decoration-success="status == 'available'">
+                    <field name='sequence' widget="handle"/>
                     <field name='pname'/>
-                    <field name='cost'/>
-                    <field name='sale_price'/>
-                    <field name='product_image' widget = "image"/> 
+                    <field name='description'/>
+                    <!-- <field name='cost'/> -->
+                    <!-- <field name='sale_cost'/> -->
+                    <!-- <field name='product_image' widget = "image"/>  -->
+                    <!-- <field name='country' /> -->
+                    <field name='status'/> 
                 </tree>
             </field>
         </record>
@@ -27,17 +32,24 @@
                     <group>
                         <field name='pname'/>
                         <field name='cus_sold'/>
+                        <field name='country'/>
                         <field name='cus_purchase'/>
                         <field name='avaiable_from'/>
                         <field name='available_till'/>
-
+                        
                     </group>
+                    
+                    
                     <group>
+                    
                         <field name='description'/>
+                        
                         <field name='cost'/>
                         <field name='sale_price'/> 
                         <field name='status'/> 
                         <field name='product_image' widget = "image"/> 
+                    
+                    
                     </group>
                     </group>
                     </sheet>
@@ -79,7 +91,7 @@
                 
                 <field name="cost"/>
                 <field name="status"/>
-                <progressbar field="status" colors='{"new": "info", "offer_received": "warning", "offer_accepted": "success", "cancel": "danger"}'/>
+                <progressbar field="status" colors='{"available": "success", "unavailable": "danger"}'/>
                 
                 <templates>
                     <t t-name="kanban-box">
@@ -94,7 +106,8 @@
                                     
                                     
                                     <li>Description : <field name="description"/></li>
-                                    <li>Price : <field name="cost"/></li>
+                                    <!-- <li>Price : <field name="sale_price"/></li>
+                                    <li>Country : <field name="country"/></li> -->
                                     <li>Status : <field name="status"/></li>
                                 </ul>
                             </div>

@@ -11,5 +11,6 @@ class hr_lockheed(models.Model):
     name = fields.Char("Employee Name")
     
     job_title = fields.Char("Job Title")
+    # department_id = fields.Char("Department")
     work_email = fields.Char('Work Email')
    

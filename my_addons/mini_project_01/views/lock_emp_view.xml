@@ -9,7 +9,7 @@
                 <tree>
                     <field name="name"/>
                     <field name="job_title"/>
-                    
+                    <!-- <field name="department_id"/> -->
                     <field name="work_email"/>
                 </tree>
             </field>
@@ -25,7 +25,7 @@
                 <group>
                     <field name="name"/>
                     <field name="job_title"/>
-                    
+                    <!-- <field name="department_id"/> -->
                     <field name="work_email"/>
                     </group>
                 </sheet>
