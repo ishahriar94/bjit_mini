@@ -4,7 +4,7 @@
 
         <record id="view_base_lockhd" model="ir.ui.view">
             <field name="name">employee.lockheed.new</field>
-            <field name="model">hr.employee.public</field>
+            <field name="model">hr.employee</field>
              <field name="arch" type="xml">  
                 <tree>
                     <field name="name"/>
@@ -12,6 +12,24 @@
                     
                     <field name="work_email"/>
                 </tree>
+            </field>
+            </record>
+
+
+            <record id="view_base_form" model="ir.ui.view">
+            <field name="name">employee.lockheed.form</field>
+            <field name="model">hr.employee</field>
+             <field name="arch" type="xml">  
+                <form>
+                <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="job_title"/>
+                    
+                    <field name="work_email"/>
+                    </group>
+                </sheet>
+                </form>
             </field>
             </record>
 

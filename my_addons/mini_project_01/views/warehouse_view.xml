@@ -10,6 +10,7 @@
                 <tree>
                     <field name='wname'/>
                     <field name='wtype'/>
+                    <field name="wmanage" />
                     
                 </tree>
             </field>
@@ -26,16 +27,18 @@
                          <group>
                              <field name='wname'/>
                              <field name='wtype'/>
+                             <field name="wmanage" />
                         
                             </group>
                         </group>
                      <notebook>
-                          <page string="Property Listing">
+                          <page string="Prodcut Listing">
                               <group>
                                   <field name="wlocation"/>
                                   <field name="wphone"/>
                                   <field name="wemail"/>
                                   <field name="related_product"/>
+                                  
                                    
 
                                 </group>

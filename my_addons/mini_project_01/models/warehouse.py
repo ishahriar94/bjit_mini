@@ -17,3 +17,5 @@ class warehouseList(models.Model):
     
     ##delegated inheritance
     related_product = fields.Many2many('product.list', string='Available Products')
+
+    wmanage = fields.Many2one('hr.employee', string='Manager')
