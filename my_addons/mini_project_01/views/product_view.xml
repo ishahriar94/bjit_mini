@@ -27,6 +27,12 @@
             <field name='model'>product.list</field>
             <field name='arch' type='xml'>
                 <form>
+                    <header>
+                        <button name="action_url" string="Visit Warehouse" class="btn-primary" 
+                            
+                        type="object"/>
+                    
+                    </header>
                     <sheet>
                     <group col="2">
                     <group>
@@ -41,14 +47,15 @@
                     
                     
                     <group>
-                    
+                        
                         <field name='description'/>
                         
                         <field name='cost'/>
                         <field name='sale_price'/> 
                         <field name='status'/> 
-                        <field name='product_image' widget = "image"/> 
-                    
+                        <field name='product_image' widget = "image"/>
+                        <field name="warehouse"/>
+
                     
                     </group>
                     </group>
@@ -125,7 +132,16 @@
 
 
 
-
+    <record id="change_status" model="ir.actions.server">   
+            
+            <field name="name">Toggle Status</field>   
+            <field name="model_id" ref="model_product_list"/>  
+            <field name="binding_model_id" ref="model_product_list"/>
+            <field name="binding_view_types">list,form</field>
+            <field name="state">code</field>
+            <field name="code">action = record.update_status()</field>
+            
+    </record>
 
 
 

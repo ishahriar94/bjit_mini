@@ -22,6 +22,17 @@
       <field name="res_model">warehouse.list</field>
       <field name="view_mode">tree,form,graph</field>
     </record>
+
+
+    <record model="ir.actions.act_window" id="report_wiz_window">
+      <field name="name">Report Wizard</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">report.wiz</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="report_wizard_form" />
+      <field name="target">new</field>
+    </record>
+
     
     <!-- Parent -->
 
@@ -44,6 +55,11 @@
      id="mini_project_01.menu_3" 
      parent="mini_menu_root"/>
 
+    <menuitem name="ReportWiz"  
+    action="report_wiz_window" 
+    id="mini_project_01.menu_4" 
+    parent="mini_menu_root"/>
+
 
 <!-- class inhertance -->
     <menuitem id="menu_hr_root" 
@@ -51,13 +67,26 @@
      action="hr.open_view_employee_list_my" 
      parent="mini_menu_root"/>
 
+
+      <record id='action_product_website' model='ir.actions.act_window'>
+          <field name='name'>Product List</field>
+          <field name='res_model'>product.template</field>
+          <field name='view_mode'>tree,form</field>
+      </record>
+
+      <menuitem 
+        id='menu_product_website' 
+        action='action_product_website' 
+        name='Website Product List'
+        parent='mini_project_01.menu_2'/>
+
     
 
     
-    <menuitem name="Product List" 
+    <!-- <menuitem name="Product List" 
      id="mini_project_01.menu_1_list" 
      parent="mini_project_01.menu_2"
-     action="project_action_window"/>
+     action="project_action_window"/> -->
 
     <menuitem name="WareHouse List" 
      id="mini_project_01.menu_3_list" 

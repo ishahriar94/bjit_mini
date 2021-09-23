@@ -16,16 +16,26 @@
     'version': 'alpha',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','hr'],
+    'depends': ['base','hr','website'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'security/group_view.xml',
+        
+        'wizard/lockheed_wizard.xml',
+        
         'views/menu.xml',
         'views/product_view.xml',
         'views/warehouse_view.xml',
         'views/lock_emp_view.xml',
-
+        'views/website_form.xml',
+        'views/product_web.xml',
+        'views/shop_website.xml',
+        
+        'reports/report.xml',
+        'reports/pdf_lockheed.xml',
+        'reports/sale_inherit.xml',
 
         
     ],

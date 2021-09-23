@@ -6,10 +6,10 @@ import re
 
 class warehouseList(models.Model):
     _name = 'warehouse.list'
-    _inherit = {'product.list': 'related_product'}
+    _inherits = {'product.list': 'related_product'}
     _description = 'WareHouse Details'
    
-    wname = fields.Char(string='WareHouse Name',required=True)
+    name = fields.Char(string='WareHouse Name',required=True)
     wtype = fields.Selection([
         ('private','Private'),
         ('open', 'Open')
@@ -23,6 +23,15 @@ class warehouseList(models.Model):
     related_product = fields.Many2many('product.list', string='Available Products')
 
     wmanage = fields.Many2one('hr.employee', string='Manager')
+
+
+
+
+class HrEmployee(models.Model):
+    _inherit = "hr.employee"
+    manager_id = fields.One2many(
+        "warehouse.list", "wmanage", string="Managed Warehouse"
+        )
     
 
     #name constraint for warehouse

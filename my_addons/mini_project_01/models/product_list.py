@@ -38,7 +38,7 @@ class productList(models.Model):
     cus_purchase = fields.Boolean(string='Can be Purchased')
     product_image = fields.Image(string="Upload", max_width=100, max_height=100, verify_resolution=False)
     status = fields.Selection([
-        ('available','Available'),
+        ('available', 'Available'),
         ('unavailable', 'Unavailable'),
         ('classified', 'Classified')
     ])
@@ -46,6 +46,8 @@ class productList(models.Model):
     
     #automatically classified object 
     
+
+    warehouse = fields.Many2many('warehouse.list', string="Warehouse")
 
 
 
@@ -81,7 +83,23 @@ class productList(models.Model):
         
 
 
+    def update_status(self):
+            for record in self:
+                if (record.status == 'available'):
+                    record.status = 'unavailable'
+                elif (record.status == 'unavailable'):
+                     record.status = 'available'
+                
 
+                
+                
+
+    def action_url(self):
+        return {
+            'type':'ir.actions.act_url',
+            'target': 'new',
+            'url': ' http://localhost:8015/web#action=164&model=warehouse.list&view_type=list&cids=&menu_id=129' ,
+        }
     
 
     

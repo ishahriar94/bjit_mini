@@ -19,6 +19,13 @@
     </record>
 
 
+    <record model="ir.actions.act_window" id="report_wiz_window">
+      <field name="name">Report Wizard</field>
+      <field name="res_model">report.wiz</field>
+      <field name="view_mode">form</field>
+    </record>
+
+
 
     
 
@@ -32,7 +39,7 @@
     <menuitem name="Overview"  action="project_action_window" id="mini_project_01.menu_1" parent="mini_menu_root"/>
     <menuitem name="Product"   id="mini_project_01.menu_2" parent="mini_menu_root"/>
     <!-- <menuitem id="menu_hr_root" name="Employees" action="hr.open_view_employee_list_my" parent="mini_menu_root"/> -->
-
+    <menuitem name="Report Wiz"  action="report_wiz_window" id="mini_project_01.menu_3" parent="mini_menu_root"/>
     <menuitem id="new_menu_lockhd_1" name="Employees" action="public_lockhd_window" parent="mini_menu_root"/>
 
     <!-- actions -->
