@@ -43,11 +43,7 @@ class productList(models.Model):
         ('classified', 'Classified')
     ])
     country = fields.Selection([('option1', 'Bangladesh'), ('option2', 'United States'), ('option3', 'Canada')], string='Country')
-    
-    #automatically classified object 
-    
-
-    warehouse = fields.Many2many('warehouse.list', string="Warehouse")
+    warehouse = fields.Many2one('warehouse.list', string="Warehouse")
 
 
 

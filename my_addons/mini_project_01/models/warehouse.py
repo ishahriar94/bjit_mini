@@ -6,7 +6,7 @@ import re
 
 class warehouseList(models.Model):
     _name = 'warehouse.list'
-    _inherits = {'product.list': 'related_product'}
+    # _inherits = {'product.list': 'related_product'}
     _description = 'WareHouse Details'
    
     name = fields.Char(string='WareHouse Name',required=True)
@@ -19,12 +19,10 @@ class warehouseList(models.Model):
     wphone = fields.Char(string='Phone')
     wemail = fields.Char(string='Email Address')
     
-    ##delegated inheritance
-    related_product = fields.Many2many('product.list', string='Available Products')
+    #delegated inheritance
+    related_product = fields.One2many('product.list', 'warehouse', string='Available Products')
 
     wmanage = fields.Many2one('hr.employee', string='Manager')
-
-
 
 
 class HrEmployee(models.Model):

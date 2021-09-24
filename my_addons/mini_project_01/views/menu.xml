@@ -1,10 +1,5 @@
 <odoo>
   <data>
-    
-
-    
-
-    
 
     <!-- For Products view action -->
 
@@ -37,8 +32,8 @@
     <!-- Parent -->
 
     <menuitem name="Lockheed Inventory" 
-     web_icon="mini_project_01, static/description/icon.png" 
-     id="mini_menu_root"/>
+              id="mini_menu_root"
+              web_icon="mini_project_01,static/description/icon.png"/>
 
     <!-- menu categories -->
 
